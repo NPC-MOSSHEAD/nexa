@@ -33,7 +33,9 @@ export function Preloader() {
       },
     });
 
-    return () => tween.kill();
+    return () => {
+      tween.kill();
+    };
   }, []);
 
   if (hidden) return null;

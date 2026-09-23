@@ -19,6 +19,8 @@ export function useSignalSection(ref: RefObject<HTMLElement | null>, mode: numbe
       onEnter: () => setMode(mode),
       onEnterBack: () => setMode(mode),
     });
-    return () => trigger.kill();
+    return () => {
+      trigger.kill();
+    };
   }, [mode, ref, setMode, start]);
 }
